@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const BundleAnalyzePlugin=require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'production',
@@ -6,5 +7,6 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
         }),
+        new BundleAnalyzePlugin(),
     ],
 }

@@ -11,7 +11,6 @@ module.exports = {
     plugins: [
         new ReactRefreshWebpackPlugin(),
         new webpack.DefinePlugin({
-            'process.env.name': JSONenvConfig.stringify('Sachin'),
         }),
     ],
 }

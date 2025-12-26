@@ -7,7 +7,7 @@ function AdminLoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
-  const name = 'Sachin Hadimani'
+  const name = "Sachin Hadimani"
 
   const handleLogin = async (e) => {
     e.preventDefault()

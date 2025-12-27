@@ -7,7 +7,7 @@
     "start": "webpack serve --config webpack/webpack.config.cjs --env env=dev",
     "build": "webpack --config webpack/webpack.config.cjs --env env=prod",
     "lint": "eslint src",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format": "prettier --write \"./**/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"

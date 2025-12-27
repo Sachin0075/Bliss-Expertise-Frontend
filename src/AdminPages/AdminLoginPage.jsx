@@ -12,15 +12,13 @@ function AdminLoginPage() {
     e.preventDefault()
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/admin/login',
+        `${process.env.API_BASE_URL}/api/admin/login`,
         { email, password }
       )
-      console.log(email)
-      console.log(password)
       localStorage.setItem('adminToken', response.data.token) // Store the admin token
       toast.success('Admin Logged In')
       navigate('/admin/dashboard') // Redirect to admin dashboard after successful login
-    } catch (err) {
+    } catch {
       toast.error('Invalid credentials')
     }
   }

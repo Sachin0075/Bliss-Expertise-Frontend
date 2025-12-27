@@ -37,7 +37,7 @@ function Login() {
         response.data &&
         response.data.message === 'User verified successfully'
       ) {
-        const { name, email } = response.data
+        const { email } = response.data
         console.log('Response Data:', response.data)
         const userResponse = await axios.get(
           'http://127.0.0.1:5000/api/users/details',

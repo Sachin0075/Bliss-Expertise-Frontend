@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 function AdminSignupPage() {
-  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -13,13 +12,14 @@ function AdminSignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(
-        'http://localhost:5000/api/admin/register',
-        { email, password }
-      )
+      await axios.post(`${process.env.API_BASE_URL}/api/admin/register`, {
+        email,
+        password,
+      })
       toast.success('Admin Created')
       navigate('/admin/login') // Redirect to login page after successful signup
-    } catch (err) {
+    } catch {
+      setError('Error creating account')
       toast.error('Error creating account')
     }
   }

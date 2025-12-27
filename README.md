@@ -1,8 +1,27 @@
-# React + Vite
+# Bliss Expertise Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for the **Bliss Expertise** platform built using **React with Webpack**.  
+This project follows a modern enterprise setup with ESLint (v9 flat config), Jest testing, and CI-ready scripts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+
+- **React** – UI library
+- **Webpack** – Module bundler
+- **Babel** – JavaScript transpilation
+- **Tailwind CSS** – Styling
+- **Axios** – API communication
+- **React Router** – Client-side routing
+- **Jest + React Testing Library** – Testing
+- **ESLint v9 (Flat Config)** – Code quality & linting
+- **Prettier** – Code formatting
+
+---
+
+env
+1.master(prod)
+2.dev
+3.staging
+
+

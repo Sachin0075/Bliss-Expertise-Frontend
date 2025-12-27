@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin=require('copy-webpack-plugin')
+const { DefinePlugin } = require('webpack')
+require("dotenv").config();
 
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -48,7 +50,11 @@ module.exports = {
             patterns: [
                 { from: 'src/assets', to: 'assets' },
             ],
-        }),
+        },
+        new DefinePlugin({
+            'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL),
+        })  
+    ),
     ],
     stats: 'errors-only',
 }

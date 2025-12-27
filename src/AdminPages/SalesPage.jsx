@@ -12,7 +12,7 @@ export default function SalesPage() {
     // Fetch the products from the backend
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products')
+        const response = await fetch(`${process.env.API_BASE_URL}/api/products`)
         const data = await response.json()
 
         // Get the maximum id from the fetched products
@@ -49,7 +49,7 @@ export default function SalesPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch(`${process.env.API_BASE_URL}/api/products`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

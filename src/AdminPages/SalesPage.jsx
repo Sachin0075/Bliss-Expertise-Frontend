@@ -6,9 +6,7 @@ export default function SalesPage() {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
-  const [img, setImg] = useState('')
   const [imgUrl, setImgUrl] = useState('')
-  const [products, setProducts] = useState([])
 
   useEffect(() => {
     // Fetch the products from the backend
@@ -16,13 +14,12 @@ export default function SalesPage() {
       try {
         const response = await fetch('http://localhost:5000/api/products')
         const data = await response.json()
-        setProducts(data)
 
         // Get the maximum id from the fetched products
         const maxId = Math.max(...data.map((product) => product.id), 0)
         setId(maxId + 1) // Set the next available id
-      } catch (error) {
-        toast.error('Error fetching products:', error)
+      } catch {
+        toast.error('Error fetching products')
       }
     }
 
@@ -35,7 +32,6 @@ export default function SalesPage() {
 
     reader.onloadend = () => {
       setImgUrl(reader.result) // Convert to base64 URL
-      setImg(file)
     }
 
     if (file) reader.readAsDataURL(file) // Read file as base64 URL
@@ -70,8 +66,7 @@ export default function SalesPage() {
       } else {
         toast.error('Failed to add product.')
       }
-    } catch (error) {
-      console.error('Error:', error)
+    } catch {
       toast.error('Error occurred while adding product')
     }
   }

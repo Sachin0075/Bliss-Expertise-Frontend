@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { toast } from 'react-toastify'
 import { useCart } from '../context/CartContext'
-import { jsPDF } from 'jspdf'
 import 'jspdf-autotable'
 
 const RazorpayPayment = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const { userData, totalAmount, cartItems } = location.state
+  const { userData, totalAmount } = location.state
   const { clearCart } = useCart()
-  const [paymentCompleted, setPaymentCompleted] = useState(false)
+  const [setPaymentCompleted] = useState(false)
 
   useEffect(() => {
     if (!window.Razorpay) {

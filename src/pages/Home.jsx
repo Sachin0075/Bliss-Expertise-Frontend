@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useCart } from '../context/CartContext'
 import { motion } from 'framer-motion'
-import serviceimg from '../assets/AC_service_image.jpg'
 
 const Home = () => {
-  const { userData } = useCart()
   const [username, setUsername] = useState('Guest')
 
   useEffect(() => {

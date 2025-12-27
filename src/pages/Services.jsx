@@ -11,7 +11,6 @@ import {
   FaExclamationTriangle,
 } from 'react-icons/fa'
 import MaintenanceIcon from '../assets/MaintenanceIcon'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const Services = () => {

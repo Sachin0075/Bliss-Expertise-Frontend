@@ -11,10 +11,10 @@ function AdminLoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(
-        `${process.env.API_BASE_URL}/api/admin/login`,
-        { email, password }
-      )
+      const response = await axios.post(`${__API_BASE_URL__}/api/admin/login`, {
+        email,
+        password,
+      })
       localStorage.setItem('adminToken', response.data.token) // Store the admin token
       toast.success('Admin Logged In')
       navigate('/admin/dashboard') // Redirect to admin dashboard after successful login

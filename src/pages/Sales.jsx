@@ -15,7 +15,7 @@ const Sales = () => {
   // Fetch AC data from API on component mount
   useEffect(() => {
     axios
-      .get(`${process.env.API_BASE_URL}/api/products`)
+      .get(`https://bliss-expertise-backend.onrender.com/api/products`)
       .then((response) => {
         setAcData(response.data) // Store the fetched data in state
       })

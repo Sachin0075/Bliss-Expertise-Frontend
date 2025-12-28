@@ -9,7 +9,9 @@ function UserContactPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/api/userdata')
+        const response = await axios.get(
+          `https://bliss-expertise-backend.onrender.com/api/userdata`
+        )
         setUsers(response.data)
         setLoading(false)
       } catch {

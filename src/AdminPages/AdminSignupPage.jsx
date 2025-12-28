@@ -12,7 +12,7 @@ function AdminSignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(`${process.env.API_BASE_URL}/api/admin/register`, {
+      await axios.post(`${__API_BASE_URL__}/api/admin/register`, {
         email,
         password,
       })

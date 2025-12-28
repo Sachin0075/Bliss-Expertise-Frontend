@@ -26,7 +26,7 @@ const ContactUs = () => {
     try {
       // Send the POST request using axios
       const response = await axios.post(
-        'http://127.0.0.1:5000/api/contact',
+        `https://bliss-expertise-backend.onrender.com/api/contact`,
         formData
       )
 

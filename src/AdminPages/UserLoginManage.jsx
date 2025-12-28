@@ -6,7 +6,7 @@ const UserLoginManage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${process.env.API_BASE_URL}/api/users`)
+      const response = await axios.get(`${__API_BASE_URL__}/api/users`)
       console.log('Fetched users:', response.data) // Log the response data
       setUsers(response.data) // Set the fetched users into state
     } catch (error) {
@@ -28,7 +28,7 @@ const UserLoginManage = () => {
 
     try {
       const response = await axios.delete(
-        `${process.env.API_BASE_URL}/api/users/${userEmail}`
+        `${__API_BASE_URL__}/api/users/${userEmail}`
       )
       console.log('User deleted:', response.data)
       fetchUsers() // Re-fetch users after deleting

@@ -12,7 +12,9 @@ export default function SalesPage() {
     // Fetch the products from the backend
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${process.env.API_BASE_URL}/api/products`)
+        const response = await fetch(
+          `https://bliss-expertise-backend.onrender.com/api/products`
+        )
         const data = await response.json()
 
         // Get the maximum id from the fetched products
@@ -49,11 +51,14 @@ export default function SalesPage() {
     }
 
     try {
-      const response = await fetch(`${process.env.API_BASE_URL}/api/products`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
+      const response = await fetch(
+        `https://bliss-expertise-backend.onrender.com/api/products`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        }
+      )
 
       const data = await response.json()
       if (data.message === 'Product added successfully') {

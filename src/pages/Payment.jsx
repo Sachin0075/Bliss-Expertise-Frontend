@@ -124,13 +124,16 @@ const Payment = () => {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(orderData),
-      })
+      const response = await fetch(
+        `https://bliss-expertise-backend.onrender.com/api/orders`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(orderData),
+        }
+      )
 
       if (response.ok) {
         console.log('Order posted successfully')

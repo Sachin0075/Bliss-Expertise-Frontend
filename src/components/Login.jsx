@@ -25,9 +25,8 @@ function Login() {
     e.preventDefault()
 
     try {
-      console.log('Email entered:', email)
       const response = await axios.get(
-        'http://127.0.0.1:5000/api/users/verify',
+        `https://bliss-expertise-backend.onrender.com/api/users/verify`,
         {
           params: { email, password },
         }
@@ -38,15 +37,13 @@ function Login() {
         response.data.message === 'User verified successfully'
       ) {
         const { email } = response.data
-        console.log('Response Data:', response.data)
         const userResponse = await axios.get(
-          'http://127.0.0.1:5000/api/users/details',
+          `https://bliss-expertise-backend.onrender.com/api/users/details`,
           {
             params: { email },
           }
         )
 
-        console.log('User Details:', userResponse.data)
         const {
           name: userName,
           email: userEmail,

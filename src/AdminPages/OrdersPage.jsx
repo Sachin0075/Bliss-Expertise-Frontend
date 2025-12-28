@@ -7,7 +7,9 @@ export default function OrdersPage() {
     // Fetch orders from the API
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/orders')
+        const response = await fetch(
+          `https://bliss-expertise-backend.onrender.com/api/orders`
+        )
         const data = await response.json()
         setOrders(data) // Set the orders data in state
       } catch (error) {

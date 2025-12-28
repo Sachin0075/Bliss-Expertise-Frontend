@@ -1,9 +1,13 @@
 const webpack = require('webpack')
-const BundleAnalyzePlugin=require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'production',
     devtool: 'source-map',
+    output: {
+        publicPath: './',
+        filename: 'bundle.[contenthash].js',
+        chunkFilename: '[name].[contenthash].bundle.js',
+    },
     plugins: [
         new webpack.DefinePlugin({
         }),
